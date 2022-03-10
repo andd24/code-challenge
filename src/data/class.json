@@ -1,0 +1,5 @@
+{
+    "C1": { "class": "regular", "base_price": 2, "max_rental_days": 2, "late_multiplier": 1.5},
+    "C2": { "class": "new", "base_price": 0, "max_rental_days": 0, "late_multiplier": 1 },
+    "C3": { "class": "children's", "base_price": 1.5, "max_rental_days": 3, "late_multiplier": 1.5 }
+}

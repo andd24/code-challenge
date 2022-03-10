@@ -4,5 +4,6 @@
     { "movieID": "F001", "days": 3 },
     { "movieID": "F002", "days": 5 },
     { "movieID": "F003", "days": 4 }
-  ]
+  ],
+  "points": 0
 }

@@ -32,7 +32,7 @@ You earned 4 frequent renter points
 
 ## Your Tasks
 
-1. The business requires statements in HTML - in addition to their current text output. The desired HTML output is shown below. Please implement `npm run html-statement` that returns this output. ##20 mins
+1. The business requires statements in HTML - in addition to their current text output. The desired HTML output is shown below. Please implement `npm run html-statement` that returns this output. 
 2. The business wants to change the movie classifications. They may, for example, wish to remove "Children's" or add a new classification called "SciFi". Then again, they may simply wish to change the algorithms for calculating frequent renter points. **In other words, the classification / pricing / points system needs to be more flexible.** (This task is intentionally open-ended.)
 
 ### HTML Output for Task #1
@@ -54,3 +54,11 @@ You earned 4 frequent renter points
 2. Include a rough estimate of how much time you spent working on the assignment.
 3. Also include any additional instructions / requirements for running your solution.
 4. Finally, please feel free - though you're not required - to provide some "documentation" to justify any tradeoffs you might have made when writing the code and what implications those tradeoffs may have in the future - especially for the second "task" above.
+
+------
+
+1. 
+2. 20 mins on challenge #1 and an afternoon/evening on and off for challenge #2
+3. Code has not been merged to main, but the branch challenge2 should run both of the solutions
+4. My solution to the second challenge is simply meant to make the creation of statements more responsive to changes or additions to the data (to the best of my ability with no prior experience with typescript).
+

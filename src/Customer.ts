@@ -6,4 +6,6 @@ export interface Rental {
 export interface Customer {
   name: string;
   rentals: Rental[];
+  points: number;
 }
+

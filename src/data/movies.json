@@ -1,5 +1,5 @@
 {
-  "F001": { "title": "The Fellowship of the Ring", "code": "regular" },
-  "F002": { "title": "The Two Towers", "code": "new" },
-  "F003": { "title": "The Return of the King", "code": "childrens" }
+  "F001": { "title": "The Fellowship of the Ring", "classID": "C1" },
+  "F002": { "title": "The Two Towers", "classID": "C2" },
+  "F003": { "title": "The Return of the King", "classID": "C3" }
 }

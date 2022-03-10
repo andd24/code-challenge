@@ -1,39 +1,39 @@
-import { MovieCode } from "./Movie";
 
-export const htmlStatement = (customer: any, movies: any): string => {
+export const htmlStatement = (customer: any, movies: any, classes: any): string => {
   let totalAmount = 0;
-  let frequentRenterPoints = 0;
   let result = `<h1>Rental Record for <em>${customer.name}</em></h1>\n<ul>\n`;
+  let points_to_add = 0
+
   for (let r of customer.rentals) {
     let movie = movies[r.movieID];
-    let thisAmount = 0;
-
-    switch (movie.code) {
-      case MovieCode.REGULAR:
-        thisAmount = 2;
-        if (r.days > 2) {
-          thisAmount += (r.days - 2) * 1.5;
-        }
-        break;
-      case MovieCode.NEW:
-        thisAmount = r.days * 3;
-        break;
-      case MovieCode.CHILDRENS:
-        thisAmount = 1.5;
-        if (r.days > 3) {
-          thisAmount += (r.days - 3) * 1.5;
-        }
-        break;
+    let genre = classes[movie.classID];
+    let price = genre.base_price
+    let days = genre.max_rental_days
+    let multiplier = genre.late_multiplier
+    let subtotal = 0
+       
+    if (genre.class != "new") {
+      subtotal = price 
+      if (r.days > days) {
+        subtotal += (r.days - days) * multiplier;
+      }
     }
+    else {
+      subtotal += r.days * 3
+      if (r.days > 2){
+        points_to_add++
+      }
+    }
+    
+    points_to_add++;
 
-    frequentRenterPoints++;
-    if (movie.code === MovieCode.NEW && r.days > 2) frequentRenterPoints++;
-
-    result += `\t<li>${movie.title} - ${thisAmount}</li>\n`;
-    totalAmount += thisAmount;
+    result += `\t<li>${movie.title} - ${subtotal}</li>\n`;
+    totalAmount += subtotal;
   }
+  customer.points += points_to_add
   result += `</ul>\n<p>Amount owed is <em>${totalAmount}</em></p>\n`;
-  result += `<p>You earned <em>${frequentRenterPoints}</em> frequent renter points</p>\n`;
+  result += `<p>You earned <em>${points_to_add}</em> frequent renter points</p>\n`;
+  result += `<p>Your new frequent renter points total is <em>${customer.points}</em>!</p>`
 
   return result;
 };
